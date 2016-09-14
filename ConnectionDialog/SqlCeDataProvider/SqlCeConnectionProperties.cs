@@ -6,11 +6,7 @@
 
 using System;
 using System.IO;
-using System.ComponentModel;
-using System.Drawing.Design;
-using System.Collections.Specialized;
-using System.Windows.Forms;
-using Microsoft.SqlServerCe.Client;
+using System.Data.SqlServerCe;
 
 namespace Microsoft.Data.ConnectionUI
 {
@@ -80,7 +76,7 @@ namespace Microsoft.Data.ConnectionUI
 			catch (SqlCeException e)
 			{
 				// Customize the error message for upgrade required
-				if (e.Number == m_intDatabaseFileNeedsUpgrading)
+				if (e.ErrorCode == m_intDatabaseFileNeedsUpgrading)
 				{
 					throw new InvalidOperationException(Resources.SqlCeConnectionProperties_FileNeedsUpgrading);
 				}

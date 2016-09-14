@@ -5,12 +5,9 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-using Microsoft.Data.ConnectionUI;
-using Microsoft.SqlServerCe.Client;
 using Microsoft.Win32;
 
 
@@ -47,7 +44,7 @@ namespace Microsoft.Data.ConnectionUI
 		{
 			get
 			{
-				return ConStringUtil.MobileDevicePrefix + @"\";
+				return MobileDevicePrefix + @"\";
 			}
 		}
 

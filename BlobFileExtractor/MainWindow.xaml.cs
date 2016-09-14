@@ -87,9 +87,9 @@ namespace BlobFileExtractor
                         _dataContext.WriteFile();
                         SuccessMessage.Visibility = System.Windows.Visibility.Visible;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Please ensure all data is fully completed.");
+                        MessageBox.Show("Please ensure all data is fully completed." + Environment.NewLine + ex.Message);
                         Wizard.ActivePageIndex = 1;
                     }
                 }
